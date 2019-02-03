@@ -44,4 +44,10 @@ public class MemberRepositoryImpl implements MemberRepository {
         return new ArrayList<>(memberMap.values());
     }
 
+    @Override
+    public void create(Member member) {
+        // NOTE : not thread safe
+        memberMap.putIfAbsent(member.getId(), member);
+    }
+
 }
