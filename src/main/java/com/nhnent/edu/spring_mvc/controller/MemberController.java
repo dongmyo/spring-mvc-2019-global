@@ -3,11 +3,9 @@ package com.nhnent.edu.spring_mvc.controller;
 import com.nhnent.edu.spring_mvc.domain.Member;
 import com.nhnent.edu.spring_mvc.repository.MemberRepository;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -39,15 +37,6 @@ public class MemberController {
         return "member/error";
     }
 
-    @GetMapping("/detail/{id}")
-    public String detail(@PathVariable String id, Model model) {
-        Member member = memberRepository.findById(id);
-
-        model.addAttribute("detail", member);
-
-        return "member/detail";
-    }
-
     @GetMapping(value = "/detail", params = { "id" })
     public ModelAndView detail2(@RequestParam(value = "id") String id) {
         Member member = memberRepository.findById(id);
@@ -58,7 +47,6 @@ public class MemberController {
         return mav;
     }
 
-    // TODO : method-level @ModelAttribute
     @ModelAttribute("modelAttributeOnMethod")
     public void modelAttributeOnMethod() {
         System.out.println("modelAttributeOnMethod is called.");
