@@ -28,7 +28,6 @@ public class MemberRestController {
         return memberRepository.list();
     }
 
-    // TODO : #2 멤버 생성용 rest api를 작성하세요.
     /*
      * POST /api/members
      * Content-type: application/json
@@ -41,6 +40,19 @@ public class MemberRestController {
      * HTTP/1.1 201 Created
      *
      */
-    // ???
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void create(@RequestBody Member member) {
+        memberRepository.create(member);
+    }
+
+    // TODO : #1 `GET /api/members/{id}` 요청에 멤버 정보를 반환하는 rest api를 작성하세요.
+    //        method argument type은 수정하지 마세요.
+    //        cf.) @PathVariable
+    @GetMapping("/{id}")
+    public Member detail(Long id) {
+        // cf.) memberRepository.findById(id)
+        return null;
+    }
 
 }
