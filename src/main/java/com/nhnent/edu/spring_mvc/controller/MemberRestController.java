@@ -4,6 +4,7 @@ import com.nhnent.edu.spring_mvc.domain.Member;
 import com.nhnent.edu.spring_mvc.repository.MemberRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,13 +47,9 @@ public class MemberRestController {
         memberRepository.create(member);
     }
 
-    // TODO : #1 `GET /api/members/{id}` 요청에 멤버 정보를 반환하는 rest api를 작성하세요.
-    //        method argument type은 수정하지 마세요.
-    //        cf.) @PathVariable
     @GetMapping("/{id}")
-    public Member detail(Long id) {
-        // cf.) memberRepository.findById(id)
-        return null;
+    public Member detail(@PathVariable Long id) {
+        return memberRepository.findById(id.toString());
     }
 
 }
