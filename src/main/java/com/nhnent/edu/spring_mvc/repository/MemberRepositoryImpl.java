@@ -50,4 +50,10 @@ public class MemberRepositoryImpl implements MemberRepository {
         memberMap.putIfAbsent(member.getId(), member);
     }
 
+    @Override
+    public void update(String id, Member member) {
+        // NOTE : not thread safe
+        memberMap.replace(id, member);
+    }
+
 }

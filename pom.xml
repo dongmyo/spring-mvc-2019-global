@@ -88,6 +88,13 @@
       <version>2.9.8</version>
     </dependency>
 
+    <!-- TODO : #1 hibernate-validator -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>5.4.2.Final</version>
+    </dependency>
+
   </dependencies>
 
   <build>

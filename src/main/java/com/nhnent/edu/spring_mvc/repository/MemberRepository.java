@@ -12,4 +12,6 @@ public interface MemberRepository {
 
     void create(Member member);
 
+    void update(String id, Member member);
+
 }

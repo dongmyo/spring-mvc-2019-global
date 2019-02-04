@@ -1,6 +1,7 @@
 package com.nhnent.edu.spring_mvc.controlleradvice;
 
 import com.nhnent.edu.spring_mvc.dto.ErrorMessageDto;
+import com.nhnent.edu.spring_mvc.exception.ApiValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -11,22 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 @ControllerAdvice(annotations = RestController.class)
 public class ApiControllerAdvice {
-    // TODO : #1 case no.1
-//    @ExceptionHandler(NumberFormatException.class)
-//    @ResponseBody
-//    public ResponseEntity<ErrorMessageDto> handleNumberFormatException(NumberFormatException ex) {
-//        return new ResponseEntity<>(
-//                new ErrorMessageDto(ex.getMessage(), ex),
-//                HttpStatus.INTERNAL_SERVER_ERROR
-//        );
-//    }
+    @ExceptionHandler(NumberFormatException.class)
+    @ResponseBody
+    public ResponseEntity<ErrorMessageDto> handleNumberFormatException(NumberFormatException ex) {
+        return new ResponseEntity<>(
+                new ErrorMessageDto(ex.getMessage(), ex),
+                HttpStatus.INTERNAL_SERVER_ERROR
+        );
+    }
 
-    // TODO : #1 case no.2
-//    @ExceptionHandler(NumberFormatException.class)
-//    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-//    @ResponseBody
-//    public ErrorMessageDto handleNumberFormatException(NumberFormatException ex) {
-//        return new ErrorMessageDto(ex.getMessage(), ex);
-//    }
+    // TODO : #4 handle ApiValidationException
+    @ExceptionHandler(ApiValidationException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseBody
+    public ErrorMessageDto handleApiValidationException(ApiValidationException ex) {
+        return new ErrorMessageDto(ex.getMessage(), ex);
+    }
 
 }
