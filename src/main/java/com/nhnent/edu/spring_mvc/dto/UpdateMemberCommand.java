@@ -1,17 +1,8 @@
 package com.nhnent.edu.spring_mvc.dto;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-
-// TODO : #2 Member 수정시 사용될 command 객체.
 public class UpdateMemberCommand {
-    @NotEmpty
     private String name;
 
-    @NotNull
-    @Min(8)
     private String password;
 
 
