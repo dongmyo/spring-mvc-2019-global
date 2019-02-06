@@ -9,8 +9,6 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.omg.CORBA.PUBLIC_MEMBER;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -71,7 +69,7 @@ public class MemberControllerTest {
 
     // TODO : #1 아래 테스트 케이스를 완성하세요.
     @Test
-    public void testMemberDetailWithoutId() {
+    public void testMemberDetailWithoutId() throws Exception {
         mockMvc.perform(get("/member/detail"))
                .andExpect(status().isOk())
                .andExpect(/* view name is member/error? */);
@@ -86,7 +84,7 @@ public class MemberControllerTest {
         mockMvc.perform(get("/member/detail/{id}", "yankee"))
                .andExpect(/* http status is ok? */)
                .andExpect(/* view name is member/detail? */)
-               .andExpect(model().attribute("member", member1))
+               .andExpect(model().attribute("detail", member1))
                .andDo(print());
     }
 
