@@ -72,7 +72,7 @@ public class MemberControllerTest {
     public void testMemberDetailWithoutId() throws Exception {
         mockMvc.perform(get("/member/detail"))
                .andExpect(status().isOk())
-               .andExpect(/* view name is member/error? */);
+               .andExpect(view().name("member/error"));
     }
 
     // TODO : #2 아래 테스트 케이스를 완성하세요.
@@ -82,8 +82,8 @@ public class MemberControllerTest {
                 .thenReturn(member1);
 
         mockMvc.perform(get("/member/detail/{id}", "yankee"))
-               .andExpect(/* http status is ok? */)
-               .andExpect(/* view name is member/detail? */)
+               .andExpect(status().isOk())
+               .andExpect(view().name("member/detail"))
                .andExpect(model().attribute("detail", member1))
                .andDo(print());
     }
