@@ -63,7 +63,6 @@ public class MemberRestController {
         return memberRepository.findById(id.toString());
     }
 
-    // TODO : #3 @Validated(@Valid) apply validator
     @PutMapping("/{id}")
     public Member update(@PathVariable String id,
                          @RequestBody @Validated UpdateMemberCommand command,
@@ -78,7 +77,6 @@ public class MemberRestController {
         return member;
     }
 
-    // TODO : #2 initBinder + addValidator
     @InitBinder("updateMemberCommand")
     protected void initBinder(WebDataBinder binder) {
         binder.addValidators(validator);

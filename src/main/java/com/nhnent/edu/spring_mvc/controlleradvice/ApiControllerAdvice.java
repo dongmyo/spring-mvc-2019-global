@@ -21,7 +21,6 @@ public class ApiControllerAdvice {
         );
     }
 
-    // TODO : #4 handle ApiValidationException
     @ExceptionHandler(ApiValidationException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
