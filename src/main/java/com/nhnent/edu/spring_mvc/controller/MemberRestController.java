@@ -49,6 +49,10 @@ public class MemberRestController {
     // TODO : #1 `GET /api/members/{id}` 요청에 멤버 정보를 반환하는 rest api를 작성하세요.
     //        method argument type은 수정하지 마세요.
     //        cf.) @PathVariable
+    // TODO : #1 write a method for the rest api of getting member information
+    //           which handles request like `GET /api/members/{id}`.
+    //        do not modify the method argument type.
+    //        cf.) @PathVariable   
     @GetMapping("/{id}")
     public Member detail(Long id) {
         // cf.) memberRepository.findById(id)
