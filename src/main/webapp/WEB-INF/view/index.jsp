@@ -9,6 +9,7 @@
 </head>
 <body>
     <!-- TODO : #4 locale을 참고하여 다국어가 지원되는 메세지. -->
+    <!-- TODO : #4 internalized message using the current locale -->
     <h2><fmt:message key="hello_world" /><!--spring:message code="hello_world" /--></h2>
 
     <ul>

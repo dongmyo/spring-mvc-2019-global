@@ -25,12 +25,16 @@ public class WebConfig implements WebMvcConfigurer {
 
     // TODO : #1 add an interceptor - LocaleChangeInterceptor
     //        `locale`이라는 파라미터로 전달된 값으로 locale을 변경.
+    // TODO : #1 add an interceptor - LocaleChangeInterceptor
+    //        it will change the current locale with the `locale` request parameter.
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LocaleChangeInterceptor());
     }
 
     // TODO : #2 LocaleResolver 설정 - locale 결정. 뭘로?
+    // TODO : #2 LocaleResolver configuration.
+    //        it will resolve the current locale. by using what?
     @Bean
     public LocaleResolver localeResolver() {
         return new FixedLocaleResolver(Locale.KOREAN);
