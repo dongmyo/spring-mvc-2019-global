@@ -50,7 +50,8 @@ public class MemberRestControllerTest {
                .andExpect(status().isCreated());
     }
 
-    // TODO : #1 아래 테스트 케이스를 완성하세요.
+    // TODO : #1 실습 - 아래 테스트 케이스를 완성하세요.
+    // TODO : #1 practice - complete the test case below.
     @Test
     public void testUpdateMember() throws Exception {
         mockMvc.perform(put("/api/members/{id}", "yankee")
@@ -58,7 +59,7 @@ public class MemberRestControllerTest {
                                 .content("{\"name\":\"\",\"password\":\"\"}")
                        )
                .andExpect(/* http status is internal server error? */)
-               .andExpect(/* content type is compatible with application/jsomn */);
+               .andExpect(/* content type is compatible with application/json */);
     }
 
 }
