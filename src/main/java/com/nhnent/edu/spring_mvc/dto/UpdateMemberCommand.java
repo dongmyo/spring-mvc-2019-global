@@ -6,6 +6,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 // TODO : #2 Member 수정시 사용될 command 객체.
+// TODO : #2 a command which is used when a member is updated.
 public class UpdateMemberCommand {
     @NotEmpty
     private String name;
