@@ -67,7 +67,8 @@ public class MemberControllerTest {
         Assert.assertEquals(2, result.size());
     }
 
-    // TODO : #1 아래 테스트 케이스를 완성하세요.
+    // TODO : #1 실습 - 아래 테스트 케이스를 완성하세요.
+    // TODO : #1 practice - complete the test case below.
     @Test
     public void testMemberDetailWithoutId() throws Exception {
         mockMvc.perform(get("/member/detail"))
@@ -75,7 +76,8 @@ public class MemberControllerTest {
                .andExpect(/* view name is member/error? */);
     }
 
-    // TODO : #2 아래 테스트 케이스를 완성하세요.
+    // TODO : #2 실습 - 아래 테스트 케이스를 완성하세요.
+    // TODO : #2 practice - complete the test case below.
     @Test
     public void testMemberDetail() throws Exception {
         when(memberRepository.findById(eq("yankee")))
