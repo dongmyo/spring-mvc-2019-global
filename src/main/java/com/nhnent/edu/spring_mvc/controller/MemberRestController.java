@@ -28,7 +28,8 @@ public class MemberRestController {
         return memberRepository.list();
     }
 
-    // TODO : #2 멤버 생성용 rest api를 작성하세요.
+    // TODO : #2 실습 - 멤버 생성용 rest api를 작성하세요.
+    // TODO : #2 practice - write a method for the rest api of creating member. 
     /*
      * POST /api/members
      * Content-type: application/json

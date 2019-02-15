@@ -11,6 +11,7 @@ public interface MemberRepository {
     List<Member> list();
 
     // TODO : #1 멤버를 생성하기 위한 메서드 추가.
+    // TODO : #1 newly added method for creating member.
     void create(Member member);
 
 }
