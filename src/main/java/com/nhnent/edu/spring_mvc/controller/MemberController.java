@@ -36,8 +36,12 @@ public class MemberController {
     }
 
     // TODO : #1 "GET /member/detail/{id}" url 패턴에 대한 핸들러 메서드를 작성하세요.
+    // TODO : #1 write a handler method which handles the url pattern like "GET /member/detail/{id}". 
 
     // TODO : #2 "GET /member/detail?id={id}" url 패턴에 대한 핸들러 메서드를 작성하세요.
     //        위에 있는 detail 메서드를 수정하지 말고, 아래에 새로이 메서드를 생성하세요.
+    // TODO : #2 write a handler method which handles the url pattern like "GET /member/detail?id={id}".
+    //		  do not modify the existing `placeHolder()` method but create a new one.
+    
 
 }
