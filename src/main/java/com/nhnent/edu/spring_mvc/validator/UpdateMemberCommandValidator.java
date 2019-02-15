@@ -6,7 +6,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-// TODO : #1 cutom validator
+// TODO : #1 custom validator
 @Component
 public class UpdateMemberCommandValidator implements Validator {
     @Override
