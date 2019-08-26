@@ -58,8 +58,8 @@ public class MemberRestControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content("{\"name\":\"\",\"password\":\"\"}")
                        )
-               .andExpect(/* http status is internal server error? */)
-               .andExpect(/* content type is compatible with application/json */);
+               .andExpect(status().isInternalServerError())
+               .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
     }
 
 }
