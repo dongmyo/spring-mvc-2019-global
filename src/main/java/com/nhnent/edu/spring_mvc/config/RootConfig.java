@@ -12,8 +12,6 @@ import org.springframework.stereotype.Controller;
 @ComponentScan(basePackageClasses = Base.class,
         excludeFilters = { @ComponentScan.Filter(Controller.class)})
 public class RootConfig {
-    // TODO : #3 MessageSource 빈 설정 - 다국어 지원.
-    // TODO : #3 MessageSource bean configuration - for the i18n support.
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
