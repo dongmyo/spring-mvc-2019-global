@@ -28,6 +28,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LocaleChangeInterceptor());
         // TODO #3: 실습 - MeasuringInterceptor 추가하기.
+        registry.addInterceptor(new MeasuringInterceptor());
     }
 
     @Bean

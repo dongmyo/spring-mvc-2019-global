@@ -17,6 +17,17 @@ import javax.servlet.http.HttpServletResponse;
  *      MeasuringUtils.stopAndGetElapsed(request)
  *      ModelAndView에 "elapsed" 라는 이름으로 속성 추가.
  */
-public class MeasuringInterceptor /* implements HandlerInterceptor */ {
+public class MeasuringInterceptor implements HandlerInterceptor {
+    @Override
+    public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object handler)
+            throws Exception {
+        MeasuringUtils.start(req);
+        return true;
+    }
 
+    @Override
+    public void postHandle(HttpServletRequest req, HttpServletResponse res, Object handler, ModelAndView mav)
+            throws Exception {
+        mav.addObject("elapsed", MeasuringUtils.stopAndGetElapsed(req));
+    }
 }
