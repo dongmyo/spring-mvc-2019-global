@@ -19,8 +19,8 @@ import java.util.List;
 
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MemberControllerTest {
@@ -65,29 +65,6 @@ public class MemberControllerTest {
         List<Member> result = (List<Member>) mav.getModel().get("members");
         Assert.assertNotNull(result);
         Assert.assertEquals(2, result.size());
-    }
-
-    // TODO : #1 실습 - 아래 테스트 케이스를 완성하세요.
-    // TODO : #1 practice - complete the test case below.
-    @Test
-    public void testMemberDetailWithoutId() throws Exception {
-        mockMvc.perform(get("/member/detail"))
-               .andExpect(status().isOk())
-               .andExpect(/* view name is member/error? */);
-    }
-
-    // TODO : #2 실습 - 아래 테스트 케이스를 완성하세요.
-    // TODO : #2 practice - complete the test case below.
-    @Test
-    public void testMemberDetail() throws Exception {
-        when(memberRepository.findById(eq("yankee")))
-                .thenReturn(member1);
-
-        mockMvc.perform(get("/member/detail/{id}", "yankee"))
-               .andExpect(/* http status is ok? */)
-               .andExpect(/* view name is member/detail? */)
-               .andExpect(model().attribute("detail", member1))
-               .andDo(print());
     }
 
 }
